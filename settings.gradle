@@ -3,4 +3,5 @@ include 'order-model'
 include 'order-service'
 include 'service-api-gateway'
 include 'order-ignite-impl'
+include 'service-discovery'
 
