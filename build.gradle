@@ -5,7 +5,11 @@ buildscript {
         mavenLocal()
         jcenter()
     }
-    
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+
 }
 
 plugins {
@@ -28,6 +32,7 @@ allprojects {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
+    apply plugin: 'io.spring.dependency-management'
 
     sourceCompatibility = 1.8
 
@@ -52,6 +57,13 @@ subprojects {
         testCompile("$appLibs.assertj")
         compile("$appLibs.groovyAll")
         testCompile("$appLibs.spockCore")
+    }
+
+    dependencyManagement {
+        imports {
+            //mavenBom "org.springframework.boot:spring-boot-starter-parent:1.2.1.RELEASE"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+        }
     }
 
 }
