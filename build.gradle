@@ -8,6 +8,7 @@ buildscript {
 
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
     }
 
 }
@@ -33,6 +34,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
     apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'docker'
 
     sourceCompatibility = 1.8
 
