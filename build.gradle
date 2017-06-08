@@ -68,4 +68,16 @@ subprojects {
         }
     }
 
+    task buildDocker(type: Docker, dependsOn: build) {
+        push = false
+        applicationName = jar.baseName
+        dockerfile = file('src/main/docker/Dockerfile')
+        doFirst {
+            copy {
+                from jar
+                into stageDir
+            }
+        }
+    }
+
 }
