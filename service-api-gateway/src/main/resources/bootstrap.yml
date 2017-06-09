@@ -2,8 +2,6 @@ server:
   port: ${PORT:8484}
 
 spring:
-  application:
-    name: service-api-gateway
   cloud:
     config:
       enabled: true
