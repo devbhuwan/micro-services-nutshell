@@ -1,6 +1,0 @@
-version: '3'
-services:
-  configuration:
-    image: io.github.devbhuwan/micro-service-nutshell-configuration:1.0-SNAPSHOT
-    ports:
-      - 8888:8888
