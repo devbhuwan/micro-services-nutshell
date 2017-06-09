@@ -5,6 +5,9 @@ spring:
     config:
       server:
         git:
-          basedir: ${HOME}/devb/github/labcart/micro-services-nutshell
+          uri: https://github.com/labcart/micro-services-nutshell
           search-paths: config
         bootstrap: true
+management:
+  security:
+    enabled: false
