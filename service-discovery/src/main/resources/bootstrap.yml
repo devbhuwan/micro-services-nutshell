@@ -1,9 +1,9 @@
 server:
-  port: 8761
+  port: ${PORT:8761}
 
 eureka:
   instance:
-    hostname: ${micro.services.nutshell.eureka.uri:localhost}
+    hostname: ${EUREKA_HOSTNAME:localhost}
   client:
     registerWithEureka: false
     fetchRegistry: false

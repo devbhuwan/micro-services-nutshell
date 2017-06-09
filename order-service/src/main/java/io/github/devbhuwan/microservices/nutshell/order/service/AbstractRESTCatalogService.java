@@ -10,10 +10,10 @@ import javax.ws.rs.core.Response;
  */
 abstract class AbstractRESTCatalogService {
 
-
     @GET
     @Path("/health")
     public Response health() {
-        return Response.ok().build();
+        return Response.ok("alive").build();
     }
+
 }

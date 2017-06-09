@@ -5,4 +5,5 @@ include 'service-api-gateway'
 include 'order-ignite-impl'
 include 'service-discovery'
 include 'configuration'
+include 'order-service-runner'
 

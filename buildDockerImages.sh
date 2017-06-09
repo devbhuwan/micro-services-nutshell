@@ -9,3 +9,6 @@ gradle clean build buildDocker
 
 cd $X_CURRENT_PATH/service-api-gateway
 gradle clean build buildDocker
+
+cd $X_CURRENT_PATH/order-service-runner
+gradle clean build buildDocker
