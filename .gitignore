@@ -17,3 +17,4 @@ hs_err_pid*
 *.iml
 **/.gradle/
 **/.idea/
+/order-management-system-web-client/node_modules/

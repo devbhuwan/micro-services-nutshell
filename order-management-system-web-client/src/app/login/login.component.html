@@ -1,0 +1,13 @@
+<div class="ui-g">
+    <div class="ui-g-4"></div>
+    <div class="ui-g-4" style="padding: 5%">
+        <p-panel header="Login | Order Management System">
+            <label>Username:</label><br>
+            <input type="text" pInputText [(ngModel)]="model.username" style="width:100%" /><br><br>
+            <label>Password:</label><br>
+            <input type="password" pPassword [(ngModel)]="model.password" [feedback]="false" style="width:100%" /><br><br>
+            <button pButton type="button" (click)="login()" label="Login"></button><br>
+        </p-panel>
+    </div>
+    <div class="ui-g-4"></div>
+</div>
