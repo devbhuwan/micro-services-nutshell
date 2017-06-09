@@ -1,0 +1,14 @@
+version: '3'
+services:
+  configuration:
+    image: io.github.devbhuwan/micro-service-nutshell-configuration:1.0-SNAPSHOT
+    ports:
+      - 8888
+  service-api-gateway:
+    image: io.github.devbhuwan/micro-service-nutshell-service-api-gateway:1.0-SNAPSHOT
+    environment:
+      - configurationServerUri=configuration:8888
+    links:
+      - configuration
+    depends_on:
+      - configuration

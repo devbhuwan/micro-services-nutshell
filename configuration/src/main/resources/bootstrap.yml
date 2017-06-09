@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          basedir: ${HOME}/devb/github/labcart/micro-services-nutshell
+          search-paths: config
+        bootstrap: true

@@ -1,4 +1,4 @@
-package io.github.devbhuwan.microservices.nutshell.order.service.api.gateway;
+package io.github.devbhuwan.microservices.nutshell.order.service.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
