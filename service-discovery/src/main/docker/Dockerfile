@@ -1,5 +1,6 @@
-FROM openjdk:8-jre
+FROM anapsix/alpine-java:8
 VOLUME /tmp
-ADD micro-service-nutshell-service-discovery-1.0-SNAPSHOT.jar app.jar
+ADD oms-service-discovery-1.0-SNAPSHOT.jar app.jar
 ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -jar /app.jar" ]
+EXPOSE 8761 8761
+CMD [ "sh", "-c", "java $JAVA_OPTS -jar /app.jar" ]

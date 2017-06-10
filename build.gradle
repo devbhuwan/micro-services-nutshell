@@ -42,7 +42,7 @@ subprojects {
         options.encoding = 'UTF-8'
     }
 
-    archivesBaseName = "micro-service-nutshell-${it.name}"
+    archivesBaseName = "oms-${it.name}"
 
     sourceSets {
         test {
