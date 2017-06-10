@@ -1,8 +1,17 @@
 package io.github.devbhuwan.microservices.nutshell.order.service;
 
+import com.sun.jersey.spi.spring.container.servlet.SpringServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.ServletContextInitializer;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.Bean;
+
+import javax.servlet.ServletRegistration;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Bhuwan Upadhyay
@@ -10,10 +19,27 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class OrderServiceApplication {
+public class OrderServiceApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(OrderServiceApplication.class, args);
     }
 
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(OrderServiceApplication.class);
+    }
+
+    @Bean
+    public ServletContextInitializer servletInitializer() {
+        return servletContext -> {
+            final ServletRegistration.Dynamic appServlet = servletContext.addServlet("jersey-servlet", new SpringServlet());
+            Map<String, String> filterParameters = new HashMap<>();
+            // Set filter parameters
+            filterParameters.put("javax.ws.rs.Application", ResourceConfiguration.class.getName());
+            appServlet.setInitParameters(filterParameters);
+            appServlet.setLoadOnStartup(2);
+            appServlet.addMapping("/*");
+        };
+    }
 }

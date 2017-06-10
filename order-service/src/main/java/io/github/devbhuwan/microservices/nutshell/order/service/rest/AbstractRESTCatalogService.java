@@ -1,4 +1,4 @@
-package io.github.devbhuwan.microservices.nutshell.order.service;
+package io.github.devbhuwan.microservices.nutshell.order.service.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,10 +10,6 @@ import javax.ws.rs.core.Response;
  */
 abstract class AbstractRESTCatalogService {
 
-    @GET
-    @Path("/health")
-    public Response health() {
-        return Response.ok("alive").build();
-    }
+
 
 }

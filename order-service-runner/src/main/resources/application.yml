@@ -1,12 +1,10 @@
 spring:
   application:
     name: order-service
-  jersey:
-    application-path: /api
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://oms-service-discovery.herokuapp.com/eureka}
   instance:
     preferIpAddress: true
