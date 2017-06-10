@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
@@ -18,7 +19,7 @@ import java.util.Map;
  * @date 2017/06/09
  */
 @SpringBootApplication
-@EnableEurekaClient
+@EnableDiscoveryClient
 public class OrderServiceApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

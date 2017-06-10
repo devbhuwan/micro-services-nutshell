@@ -2,12 +2,21 @@ spring:
   application:
     name: service-api-gateway
 
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
 zuul:
   ignoredServices: '*'
   routes:
     orderService:
       path: /order/**
-      serviceId: order-service
+      service-id: order-service
+      strip-prefix: false
 
 eureka:
   client:
