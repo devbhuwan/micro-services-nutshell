@@ -6,4 +6,5 @@ include 'order-ignite-impl'
 include 'service-discovery'
 include 'configuration'
 include 'order-service-runner'
+include 'service-hystrix-dashboard'
 
