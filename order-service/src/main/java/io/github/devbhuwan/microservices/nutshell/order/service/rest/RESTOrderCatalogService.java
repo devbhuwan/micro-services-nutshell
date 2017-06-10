@@ -1,4 +1,4 @@
-package io.github.devbhuwan.microservices.nutshell.order.service;
+package io.github.devbhuwan.microservices.nutshell.order.service.rest;
 
 import io.github.devbhuwan.microservices.nutshell.order.model.Order;
 import io.github.devbhuwan.microservices.nutshell.order.model.contracts.OrderCatalogService;
@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 @Path(OrderCatalogService.SERVICE_URI)
 @Produces({MediaType.APPLICATION_JSON})
 @Consumes({MediaType.APPLICATION_JSON})
-public class RESTOrderCatalogService extends AbstractRESTCatalogService implements OrderCatalogService {
+public class RESTOrderCatalogService implements OrderCatalogService {
 
     @Override
     public Response createNewOrder(Order order) {
@@ -25,6 +25,7 @@ public class RESTOrderCatalogService extends AbstractRESTCatalogService implemen
 
     @Override
     public Response getOrder(String orderId, String fields) {
-        return null;
+        return Response.ok("{id : 1, name: 'ok'}").build();
     }
+
 }
