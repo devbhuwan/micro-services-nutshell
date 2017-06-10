@@ -2,6 +2,9 @@ spring:
   application:
     name: service-api-gateway
 
+security:
+  sessions: always
+
 endpoints:
   restart:
     enabled: true

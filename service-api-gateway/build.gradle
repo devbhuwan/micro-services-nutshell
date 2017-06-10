@@ -5,4 +5,7 @@ dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
     compile("org.springframework.cloud:spring-cloud-starter-feign")
     compile("org.springframework.cloud:spring-cloud-starter-zuul")
+    compile("org.springframework.cloud:spring-cloud-starter-security")
+    compile("org.springframework.session:spring-session-data-redis")
+    compile("com.github.kstyrc:embedded-redis:0.6")
 }
