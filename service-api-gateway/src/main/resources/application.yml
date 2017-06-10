@@ -2,6 +2,13 @@ spring:
   application:
     name: service-api-gateway
 
+zuul:
+  ignoredServices: '*'
+  routes:
+    orderService:
+      path: /order/**
+      serviceId: order-service
+
 eureka:
   client:
     serviceUrl:

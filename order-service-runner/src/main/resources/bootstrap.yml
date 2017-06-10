@@ -5,7 +5,7 @@ spring:
   cloud:
     config:
       enabled: true
-      uri: ${CONFIGURATION_URI:http://oms-configuration.herokuapp.com}
+      uri: ${CONFIGURATION_URI:http://localhost:8888}
       fail-fast: true
       retry:
         initialInterval: 2000
