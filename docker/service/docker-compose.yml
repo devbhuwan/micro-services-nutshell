@@ -1,13 +1,13 @@
 version: '3'
 services:
   order-service:
-    image: io.github.devbhuwan/micro-service-nutshell-order-service-runner:1.0-SNAPSHOT
+    image: io.github.devbhuwan/oms-order-service-runner:1.0-SNAPSHOT
     environment:
       - CONFIGURATION_URI=${CONFIGURATION_URI}
       - EUREKA_URI=${EUREKA_URI}
       - PORT=8080
   service-api-gateway:
-    image: io.github.devbhuwan/micro-service-nutshell-service-api-gateway:1.0-SNAPSHOT
+    image: io.github.devbhuwan/oms-service-api-gateway:1.0-SNAPSHOT
     environment:
       - CONFIGURATION_URI=${CONFIGURATION_URI}
       - EUREKA_URI=${EUREKA_URI}
