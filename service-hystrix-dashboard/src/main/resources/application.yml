@@ -2,6 +2,12 @@ spring:
   application:
     name: service-hystrix-dashboard
 
+turbine:
+  aggregator:
+    clusterConfig: MicroServicesNutshell
+  appConfig: service-api-gateway
+  clusterNameExpression: new String("default")
+
 eureka:
   client:
     serviceUrl:
