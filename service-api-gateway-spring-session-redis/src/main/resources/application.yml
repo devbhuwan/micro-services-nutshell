@@ -1,8 +1,9 @@
 spring:
   application:
     name: service-api-gateway
-  session:
-    store-type: none
+
+security:
+  sessions: always
 
 endpoints:
   restart:
