@@ -1,3 +1,16 @@
 server:
   port: ${PORT:8586}
   context-path: /uaa
+
+
+spring:
+  cloud:
+    config:
+      enabled: true
+      uri: ${CONFIGURATION_URI:http://localhost:8888}
+      fail-fast: true
+      retry:
+        initialInterval: 2000
+        multiplier: 1.2
+        maxInterval: 5000
+        maxAttempts: 10
