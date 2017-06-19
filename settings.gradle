@@ -7,6 +7,6 @@ include 'service-discovery'
 include 'configuration'
 include 'order-service-runner'
 include 'service-hystrix-dashboard'
-include 'service-security-using-jjwt'
+include 'service-auth-server'
 include 'service-api-gateway-spring-session-redis'
 

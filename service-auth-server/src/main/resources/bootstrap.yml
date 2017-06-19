@@ -1,0 +1,3 @@
+server:
+  port: ${PORT:8586}
+  context-path: /uaa

@@ -7,8 +7,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 import javax.servlet.ServletRegistration;
 import java.util.HashMap;
@@ -19,6 +19,7 @@ import java.util.Map;
  * @date 2017/06/09
  */
 @SpringBootApplication
+@EnableResourceServer
 @EnableDiscoveryClient
 public class OrderServiceApplication extends SpringBootServletInitializer {
 
