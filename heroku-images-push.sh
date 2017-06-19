@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 #heroku container:login
-for X in oms-service-discovery oms-configuration oms-order-service-runner oms-service-api-gateway
+for X in configuration service-discovery order-service-runner service-api-gateway service-auth-server service-hystrix-dashboard
 do
-    heroku apps:destroy --app --confirm ${X}
-    heroku apps:create ${X}
-    docker tag io.github.devbhuwan/${X}:1.0-SNAPSHOT registry.heroku.com/${X}/web
-    docker push registry.heroku.com/${X}/web
-    #heroku container:push web --app $X
+    heroku apps:destroy --app --confirm oms-${X}
+    heroku apps:create oms-${X}
+    docker tag io.github.devbhuwan/oms-${X}:1.0-SNAPSHOT registry.heroku.com/oms-${X}/web
+    docker push registry.heroku.com/oms-${X}/web
 done
-#heroku open -a <app>

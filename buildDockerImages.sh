@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 X_CURRENT_PATH=$(pwd)
 
-#cd ${X_CURRENT_PATH}/configuration
-#gradle clean build buildDocker
-#
-#cd ${X_CURRENT_PATH}/service-discovery
-#gradle clean build buildDocker
-#
-#cd ${X_CURRENT_PATH}/service-api-gateway
-#gradle clean build buildDocker
-
-cd ${X_CURRENT_PATH}/order-service-runner
-gradle clean build buildDocker
+for X in configuration service-discovery order-service-runner service-api-gateway service-auth-server service-hystrix-dashboard
+do
+    cd ${X_CURRENT_PATH}/${X}
+    gradle clean build buildDocker
+done
