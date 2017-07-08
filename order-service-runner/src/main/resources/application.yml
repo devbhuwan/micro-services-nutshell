@@ -2,6 +2,10 @@ spring:
   application:
     name: order-service
 
+server:
+  port: ${PORT:8080}
+
+
 eureka:
   client:
     serviceUrl:

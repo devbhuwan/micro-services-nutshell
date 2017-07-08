@@ -4,6 +4,9 @@ spring:
   application:
     name: service-api-gateway
 
+server:
+  port: ${PORT:8484}
+
 endpoints:
   restart:
     enabled: true

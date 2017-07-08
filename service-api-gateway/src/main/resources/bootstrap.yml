@@ -1,6 +1,3 @@
-server:
-  port: ${PORT:8484}
-
 spring:
   cloud:
     config:

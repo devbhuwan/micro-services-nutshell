@@ -1,6 +1,10 @@
 spring:
   application:
     name: configuration
+
+server:
+  port: ${PORT:8888}
+
 eureka:
   client:
     serviceUrl:
