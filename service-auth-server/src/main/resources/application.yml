@@ -2,6 +2,10 @@ spring:
   application:
     name: uaa-service
 
+server:
+  port: ${PORT:8586}
+  context-path: /uaa
+
 # Define the Eureka server that handles service registration
 eureka:
   client:
