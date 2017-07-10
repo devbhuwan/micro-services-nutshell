@@ -3,7 +3,7 @@ spring:
     config:
       enabled: true
       uri: ${CONFIGURATION_URI:http://localhost:8888}
-      fail-fast: true
+      fail-fast: false
       retry:
         initialInterval: 2000
         multiplier: 1.2
