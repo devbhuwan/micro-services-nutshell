@@ -25,7 +25,7 @@ services:
     links:
       - registry
   order-service:
-    image: io.github.devbhuwan/oms-order-service-runner:1.0-SNAPSHOT
+    image: io.github.devbhuwan/oms-order-service:1.0-SNAPSHOT
     environment:
       - EUREKA_URI=${EUREKA_URI}
       - CONFIGURATION_URI=${CONFIGURATION_URI}
