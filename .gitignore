@@ -19,3 +19,4 @@ hs_err_pid*
 **/.idea/
 /order-management-system-web-client/node_modules/
 !/docker/monitoring/jolokia-jvm-1.3.6-agent.jar
+docker/vol

@@ -31,5 +31,7 @@ services:
     environment:
       - EUREKA_URI=${EUREKA_URI}
       - CONFIGURATION_URI=${CONFIGURATION_URI}
+      - LOGSTASH = ${LOGSTASH}
     links:
       - registry
+      - logstash
