@@ -5,8 +5,7 @@ include 'service-api-gateway'
 include 'order-ignite-impl'
 include 'service-registry'
 include 'configuration'
-include 'order-service-runner'
 include 'service-hystrix-dashboard'
 include 'service-auth-server'
-include 'service-api-gateway-spring-session-redis'
+
 
