@@ -1,12 +1,32 @@
 version: '3'
 services:
-  config:
-    image: io.github.devbhuwan/oms-configuration:1.0-SNAPSHOT
   registry:
     image: io.github.devbhuwan/oms-service-registry:1.0-SNAPSHOT
+  config:
+    image: io.github.devbhuwan/oms-configuration:1.0-SNAPSHOT
+    environment:
+      - EUREKA_URI=${EUREKA_URI}
+      - CONFIGURATION_URI=${CONFIGURATION_URI}
+    links:
+      - registry
   gateway:
     image: io.github.devbhuwan/oms-service-api-gateway:1.0-SNAPSHOT
+    environment:
+      - EUREKA_URI=${EUREKA_URI}
+      - CONFIGURATION_URI=${CONFIGURATION_URI}
+    links:
+      - registry
   auth-server:
     image: io.github.devbhuwan/oms-service-auth-server:1.0-SNAPSHOT
+    environment:
+      - EUREKA_URI=${EUREKA_URI}
+      - CONFIGURATION_URI=${CONFIGURATION_URI}
+    links:
+      - registry
   order-service:
     image: io.github.devbhuwan/oms-order-service-runner:1.0-SNAPSHOT
+    environment:
+      - EUREKA_URI=${EUREKA_URI}
+      - CONFIGURATION_URI=${CONFIGURATION_URI}
+    links:
+      - registry
