@@ -2,13 +2,15 @@ version: '3'
 services:
   registry:
     image: io.github.devbhuwan/oms-service-registry:1.0-SNAPSHOT
-  config:
-    image: io.github.devbhuwan/oms-configuration:1.0-SNAPSHOT
-    environment:
-      - EUREKA_URI=${EUREKA_URI}
-      - CONFIGURATION_URI=${CONFIGURATION_URI}
-    links:
-      - registry
+    ports:
+      - 8761
+#  config:
+#    image: io.github.devbhuwan/oms-configuration:1.0-SNAPSHOT
+#    environment:
+#      - EUREKA_URI=${EUREKA_URI}
+#      - CONFIGURATION_URI=${CONFIGURATION_URI}
+#    links:
+#      - registry
   gateway:
     image: io.github.devbhuwan/oms-service-api-gateway:1.0-SNAPSHOT
     environment:

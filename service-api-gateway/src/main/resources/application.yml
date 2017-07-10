@@ -25,6 +25,7 @@ zuul:
     uaa-service:
       sensitiveHeaders:
       path: /uaa/**
+      service-id: uaa-service
       stripPrefix: false
   add-proxy-headers: true
 
@@ -36,7 +37,7 @@ security:
     sso:
       loginPath: /login
     client:
-      accessTokenUri: http://localhost:8586/uaa/oauth/token
+      accessTokenUri: http://localhost:${server.port}/uaa/oauth/token
       userAuthorizationUri: /uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
