@@ -11,3 +11,24 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     preferIpAddress: true
+
+
+# Disable spring basic authentication security
+security:
+  basic:
+    enabled: false
+  oauth2:
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkl/5ST2UDpSe7dLwrD0B
+          pSbGXp4QE0dEFg/wV59kL4n/1aTIFUEx0Kd1fjWI55tKE7l7xycOQsys/Ec1oQTw
+          JufXSmCNKNnG6Wb8E5eajFm60D8Lmz8U4v7Hr04IPDBjtuoUc9JQsxrvJMjFrQcw
+          x3tPSFTjKxlE3G2MN2AXKw18fn3iS99zf1z6+GGHjc7CRdNWvfYnt4QfWEdf1s4r
+          T8kWgF216JsWwnDgLEqsKfrDp1v2pnZlVswhEh83yAgF3y21eBvkE1+FY7rHyld9
+          j2KymR3lUVPaNrNKOeDhTCUf7l0uck3MyMoA1pe2Inaol5C3AeaUic+jpvrJZuM+
+          fwIDAQAB
+          -----END PUBLIC KEY-----
+      id: openid
+      serviceId: ${PREFIX:}resource
