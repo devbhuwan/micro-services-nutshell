@@ -1,6 +1,7 @@
 package io.github.devbhuwan.microservices.nutshell.order.service.rest;
 
 import io.github.devbhuwan.microservices.nutshell.order.model.Order;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Path;
@@ -13,6 +14,7 @@ import javax.ws.rs.core.Response;
  * @date 2017/05/19
  */
 
+@RestController
 public class RESTOrderCatalogService  {
 
 
