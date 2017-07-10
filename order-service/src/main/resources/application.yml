@@ -32,3 +32,9 @@ security:
           -----END PUBLIC KEY-----
       id: openid
       serviceId: ${PREFIX:}resource
+
+logstash:
+  servers: ${LOGSTASH:'localhost:4560'}
+info:
+  artifact: ${spring.application.name}
+  version: 1.0-SNAPSHOT

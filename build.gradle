@@ -54,6 +54,7 @@ subprojects {
     dependencies {
         compile("$appLibs.lombok")
         compile("$appLibs.logbackClassic")
+        compile("$appLibs.logbackLogstashEncoder")
         compile("$appLibs.commonLang3")
 
         testCompile("$appLibs.junit")

@@ -12,7 +12,9 @@ appLibs += [
         groovyAll     : "org.codehaus.groovy:groovy-all:$groovyAllVersion",
         spockCore     : "org.spockframework:spock-core:$spockVersion",
         jaxRs1Api : "javax.ws.rs:jsr311-api:$jaxRs1ApiVersion",
-        jaxRs2Api: "javax.ws.rs:javax.ws.rs-api:$jaxRs2ApiVersion"
+        jaxRs2Api: "javax.ws.rs:javax.ws.rs-api:$jaxRs2ApiVersion",
+        logbackLogstashEncoder: "net.logstash.logbac:logstash-logback-encoder:$logbackLogstashEncoderVersion",
+        janino : "org.codehaus.janino:janino:$janinoVersion"
 ]
 
 appPlugins += [
