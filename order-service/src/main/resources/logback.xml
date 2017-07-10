@@ -3,7 +3,7 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-    <springProperty scope="context" name="LOG_STASH" source="logstash.servers"/>
+    <springProperty scope="context" name="LOG_STASH" source="logstash.connection"/>
     <springProperty scope="context" name="APP_NAME" source="info.artifact"/>
     <springProperty scope="context" name="APP_VERSION" source="info.version"/>
 

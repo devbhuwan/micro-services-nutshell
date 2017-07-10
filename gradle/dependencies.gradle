@@ -5,6 +5,7 @@ ext {
 
 appLibs += [
         lombok        : "org.projectlombok:lombok:$lombokVersion",
+        logbackCore: "ch.qos.logback:logback-core:$logbackVersion",
         logbackClassic: "ch.qos.logback:logback-classic:$logbackVersion",
         logbackAccess: "ch.qos.logback:logback-access:$logbackVersion",
         commonLang3   : "org.apache.commons:commons-lang3:$commonLang3Version",

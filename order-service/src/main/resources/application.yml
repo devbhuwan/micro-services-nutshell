@@ -33,6 +33,8 @@ security:
       id: openid
       serviceId: ${PREFIX:}resource
 
+logstash:
+  connection:
 info:
-  artifact: ${spring.application.name}
-  version: 1.0-SNAPSHOT
+    artifact: ${spring.application.name}
+    version: 1.0-SNAPSHOT
