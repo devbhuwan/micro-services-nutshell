@@ -34,4 +34,3 @@ services:
       - LOGSTASH = ${LOGSTASH}
     links:
       - registry
-      - logstash

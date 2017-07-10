@@ -23,3 +23,11 @@ services:
       - elasticsearch
     ports:
       - 9600:9600
+  kibana:
+    image: docker.elastic.co/kibana/kibana:5.5.0
+    volumes:
+      - ./logging/kibana.yml:/usr/share/kibana/config/kibana.yml
+    links:
+      - elasticsearch
+    ports:
+      - 5601:5601

@@ -6,6 +6,7 @@ ext {
 appLibs += [
         lombok        : "org.projectlombok:lombok:$lombokVersion",
         logbackClassic: "ch.qos.logback:logback-classic:$logbackVersion",
+        logbackAccess: "ch.qos.logback:logback-access:$logbackVersion",
         commonLang3   : "org.apache.commons:commons-lang3:$commonLang3Version",
         junit         : "junit:junit:$junitVersion",
         assertj       : "org.assertj:assertj-core:$assertjVersion",
@@ -13,10 +14,11 @@ appLibs += [
         spockCore     : "org.spockframework:spock-core:$spockVersion",
         jaxRs1Api : "javax.ws.rs:jsr311-api:$jaxRs1ApiVersion",
         jaxRs2Api: "javax.ws.rs:javax.ws.rs-api:$jaxRs2ApiVersion",
-        logbackLogstashEncoder: "net.logstash.logbac:logstash-logback-encoder:$logbackLogstashEncoderVersion",
+        logbackLogstashEncoder: "net.logstash.logback:logstash-logback-encoder:$logbackLogstashEncoderVersion",
         janino : "org.codehaus.janino:janino:$janinoVersion"
 ]
 
 appPlugins += [
 
 ]
+
