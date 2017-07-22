@@ -17,6 +17,9 @@ import { AppRoutingModule } from './app.routing';
 
 // Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
+import { WorkflowComponent } from './core/workflow/workflow.component';
+import { WorkflowOperationComponent } from './core/workflow/workflow-operation/workflow-operation.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   imports: [

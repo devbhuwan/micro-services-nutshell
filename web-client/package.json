@@ -1,10 +1,10 @@
 {
-  "name": "coreui-angular",
-  "version": "1.0.0-alpha.6",
-  "description": "Open Source Bootstrap Admin Template",
+  "name": "oms-web-client",
+  "version": "1.0-SNAPSHOT",
+  "description": "Order Management System",
   "author": "",
-  "url": "http://coreui.io",
-  "copyright": "Copyright 2017 creativeLabs Łukasz Holeczek",
+  "url": "http://developerbhuwan.com",
+  "copyright": "Copyright 2017 DeveloperBhuwan",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
