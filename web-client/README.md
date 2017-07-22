@@ -42,3 +42,9 @@ ng g m core
 ng g c core/workflow --module core
 ```
 
+- Import One Module to Another On
+```bash
+ng g m <src_module> --module=<dest_module>
+eg. ng g m core --module=order
+#select no option
+```
