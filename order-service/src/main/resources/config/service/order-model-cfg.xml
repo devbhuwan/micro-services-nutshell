@@ -4,12 +4,10 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="orderQueryRepository"
-          class="io.github.devbhuwan.microservices.nutshell.order.ignite.OrderQueryRepositoryImpl"
-          depends-on="igniteInstance"/>
+          class="io.github.devbhuwan.microservices.nutshell.order.ignite.OrderQueryRepositoryImpl"/>
 
     <bean id="orderCommandService"
-          class="io.github.devbhuwan.microservices.nutshell.order.ignite.OrderCommandServiceImpl"
-          depends-on="igniteInstance"/>
+          class="io.github.devbhuwan.microservices.nutshell.order.ignite.OrderCommandServiceImpl"/>
 
     <bean class="io.github.devbhuwan.microservices.nutshell.order.service.OrderApiService"
           depends-on="orderQueryRepository">

@@ -10,6 +10,5 @@ include 'service-auth-server'
 
 include 'workflow-model'
 include 'camunda-workflow-starter'
-include 'apache-ignite-data-starter'
 include 'logback-logstash-starter'
 

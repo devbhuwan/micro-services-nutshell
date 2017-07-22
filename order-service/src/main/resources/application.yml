@@ -5,7 +5,5 @@ spring:
 server:
   port: ${PORT:8484}
 
-devbhuwan:
-  apache:
-    ignite:
-      xmlConfigurationPath: classpath:config/ignite/order-ignite-cfg.xml
+ignite:
+  cfgPath: classpath:config/ignite/order-ignite-cfg.xml
