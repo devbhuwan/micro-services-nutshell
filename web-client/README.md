@@ -30,7 +30,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Some Example For Angular CLI
+
+- Module + Route + Component 
 ```bash
-ng g module order --routing
-ng g component order/view --routing --module order
+ng g m order --routing
+ng g c order/view --routing --module order
 ```
+- Module + Component  
+```bash
+ng g m core
+ng g c core/workflow --module core
+```
+
