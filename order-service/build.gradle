@@ -2,7 +2,7 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
     compile project(":order-ignite-impl")
-    //compile project(":camunda-workflow-starter")
+    compile project(":camunda-workflow-starter")
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
