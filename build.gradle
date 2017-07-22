@@ -7,8 +7,9 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath 'se.transmode.gradle:gradle-docker:1.2'
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "se.transmode.gradle:gradle-docker:${dockerPluginVersion}"
+        classpath "net.ltgt.gradle:gradle-apt-plugin:${aptPluginVersion}"
     }
 
 }
@@ -20,62 +21,68 @@ plugins {
 apply from: "$rootDir/gradle/dependencies.gradle"
 
 allprojects {
-    apply plugin: 'idea'
+    apply plugin: "idea"
 
     repositories {
         mavenCentral()
         mavenLocal()
         jcenter()
-        mavenRepoUrl.split(',').each { repoUrl -> maven { url repoUrl } }
+        mavenRepoUrl.split(",").each { repoUrl -> maven { url repoUrl } }
     }
 }
 
 subprojects {
-    apply plugin: 'java'
-    apply plugin: 'maven'
-    apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'docker'
-    apply plugin: 'maven-publish'
+    apply plugin: "java"
+    apply plugin: "maven"
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: "docker"
+    apply plugin: "maven-publish"
+    apply plugin: "net.ltgt.apt"
+    //apply plugin: 'findbugs'
+    apply plugin: 'project-report'
 
     sourceCompatibility = 1.8
 
     compileJava {
-        options.encoding = 'UTF-8'
+        options.encoding = "UTF-8"
     }
 
     archivesBaseName = "oms-${it.name}"
 
     sourceSets {
         test {
-            java.srcDirs = ['src/test/java', 'src/test/groovy']
+            java.srcDirs = ["src/test/java", "src/test/groovy"]
         }
     }
 
     dependencies {
-        compile("$appLibs.lombok")
-        compile("$appLibs.logbackCore")
-        compile("$appLibs.logbackClassic")
-        compile("$appLibs.logbackAccess")
-        compile("$appLibs.logbackLogstashEncoder")
-        compile("$appLibs.commonLang3")
+        compile "$appLibs.lombok"
+        compile "$appLibs.commonLang3"
+        compile "$appLibs.groovyAll"
+        compile "$appLibs.guava"
+        compile "$appLibs.immutableValue"
+        compile "$appLibs.slf4j"
 
-        testCompile("$appLibs.junit")
-        testCompile("$appLibs.assertj")
-        compile("$appLibs.groovyAll")
-        testCompile("$appLibs.spockCore")
+        apt "$appLibs.immutableValue"
+        apt "$appLibs.lombok"
+
+        testCompile "$appLibs.junit"
+        testCompile "$appLibs.assertj"
+        testCompile "$appLibs.spockCore"
+        testCompile "$appLibs.mutabilitydetector"
     }
 
     dependencyManagement {
         imports {
-            //mavenBom "org.springframework.boot:spring-boot-starter-parent:1.2.1.RELEASE"
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+            mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
         }
     }
 
     task buildDocker(type: Docker, dependsOn: build) {
         push = false
         applicationName = jar.baseName
-        dockerfile = file('src/main/docker/Dockerfile')
+        dockerfile = file("src/main/docker/Dockerfile")
         doFirst {
             copy {
                 from jar
@@ -96,5 +103,11 @@ subprojects {
             rename ".*", "pom.xml"
         }
     }
+
+    task processImmutableValue() {
+
+    }
+
+    compileJava.dependsOn(processImmutableValue)
 
 }

@@ -1,0 +1,9 @@
+apply plugin: ApacheIgniteDependencyPlugin
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+    compileOnly("org.springframework.boot:spring-boot-configuration-processor")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+compileJava.dependsOn(processResources)

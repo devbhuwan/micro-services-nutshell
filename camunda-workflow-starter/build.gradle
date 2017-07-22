@@ -1,0 +1,8 @@
+dependencies {
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+    compile("org.camunda.bpm.extension.springboot:camunda-bpm-spring-boot-starter:$camundaSpringBootStarter")
+    compileOnly("org.springframework.boot:spring-boot-configuration-processor")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+compileJava.dependsOn(processResources)

@@ -1,5 +1,4 @@
-apply plugin: ApacheIgniteDependencyPlugin
-
 dependencies {
     compile project(":order-model")
+    compile project(":apache-ignite-data-starter")
 }

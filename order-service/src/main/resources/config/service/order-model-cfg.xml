@@ -1,0 +1,37 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="orderQueryRepository"
+          class="io.github.devbhuwan.microservices.nutshell.order.ignite.OrderQueryRepositoryImpl"
+          depends-on="igniteInstance"/>
+
+    <bean id="orderCommandService"
+          class="io.github.devbhuwan.microservices.nutshell.order.ignite.OrderCommandServiceImpl"
+          depends-on="igniteInstance"/>
+
+    <bean class="io.github.devbhuwan.microservices.nutshell.order.service.OrderApiService"
+          depends-on="orderQueryRepository">
+        <property name="acceptOrderUseCase" ref="acceptOrderUseCase"/>
+        <property name="createNewOrderUseCase" ref="createNewOrderUseCase"/>
+        <property name="deliverOrderUseCase" ref="deliverOrderUseCase"/>
+        <property name="rejectOrderUseCase" ref="rejectOrderUseCase"/>
+        <property name="orderQueryRepository" ref="orderQueryRepository"/>
+    </bean>
+
+    <bean id="acceptOrderUseCase" class="io.github.devbhuwan.microservices.nutshell.order.usecases.AcceptOrderUseCase">
+        <property name="orderCommandService" ref="orderCommandService"/>
+    </bean>
+    <bean id="createNewOrderUseCase"
+          class="io.github.devbhuwan.microservices.nutshell.order.usecases.CreateNewOrderUseCase">
+        <property name="orderCommandService" ref="orderCommandService"/>
+    </bean>
+    <bean id="deliverOrderUseCase"
+          class="io.github.devbhuwan.microservices.nutshell.order.usecases.DeliverOrderUseCase">
+        <property name="orderCommandService" ref="orderCommandService"/>
+    </bean>
+    <bean id="rejectOrderUseCase" class="io.github.devbhuwan.microservices.nutshell.order.usecases.RejectOrderUseCase">
+        <property name="orderCommandService" ref="orderCommandService"/>
+    </bean>
+</beans>

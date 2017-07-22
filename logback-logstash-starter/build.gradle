@@ -1,0 +1,6 @@
+dependencies {
+    compile "$appLibs.logbackCore"
+    compile "$appLibs.logbackClassic"
+    compile "$appLibs.logbackAccess"
+    compile "$appLibs.logbackLogstashEncoder"
+}

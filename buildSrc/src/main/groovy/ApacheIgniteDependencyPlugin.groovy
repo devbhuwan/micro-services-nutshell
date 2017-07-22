@@ -14,6 +14,7 @@ class ApacheIgniteDependencyPlugin implements Plugin<Project> {
             compile "org.apache.ignite:ignite-core:${project.igniteVersion}"
             compile "org.apache.ignite:ignite-indexing:${project.igniteVersion}"
             compile "org.apache.ignite:ignite-spring:${project.igniteVersion}"
+            compile "com.h2database:h2:${project.h2Version}"
         }
 
     }
