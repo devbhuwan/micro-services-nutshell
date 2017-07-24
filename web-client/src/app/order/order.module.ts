@@ -3,11 +3,13 @@ import {CommonModule} from '@angular/common';
 
 import { OrderRoutingModule } from './order-routing.module';
 import { ViewComponent } from './view/view.component';
+import { CoreModule } from '../core/core.module'
 
 @NgModule({
   imports: [
     CommonModule,
-    OrderRoutingModule
+    OrderRoutingModule,
+    CoreModule.forRoot()
   ],
   declarations: [ViewComponent]
 })

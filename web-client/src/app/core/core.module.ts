@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WorkflowComponent } from './workflow/workflow.component';
 
@@ -6,6 +6,16 @@ import { WorkflowComponent } from './workflow/workflow.component';
   imports: [
     CommonModule
   ],
-  declarations: [WorkflowComponent]
+  declarations: [WorkflowComponent],
+  exports: [WorkflowComponent]
 })
-export class CoreModule { }
+export class CoreModule {
+
+  static forRoot() : ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: []
+    };
+  }
+
+}
