@@ -1,4 +1,5 @@
 rootProject.name = 'micro-services-nutshell'
+include 'micro-service-starter'
 include 'order-model'
 include 'order-service'
 include 'service-api-gateway'

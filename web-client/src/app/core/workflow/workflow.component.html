@@ -1,3 +1,6 @@
-<p>
-  workflow works!
-</p>
+<div>
+  Workflow
+  <button type="button" class="btn btn-primary" *ngFor="let operation of operations$ | async" (click)="executeOperation(operation)">
+    {{operation.label}}
+  </button>
+</div>

@@ -6,6 +6,7 @@ import {CoreModule} from '../core/core.module';
 import {OrderSectionComponent} from './order-section/order-section.component'
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
+import { OrderService } from './domain/order.service';
 
 export const COMPONENTS = [
   //ViewComponent
@@ -17,7 +18,8 @@ export const COMPONENTS = [
     OrderRoutingModule,
     CoreModule.forRoot(),
   ],
-  declarations: [OrderSectionComponent]
+  declarations: [OrderSectionComponent],
+  providers: [OrderService]
 })
 export class OrderModule {
 }
