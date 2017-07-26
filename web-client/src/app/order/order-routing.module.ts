@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {ViewComponent} from './view/view.component';
+import {OrderSectionComponent} from './order-section/order-section.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ViewComponent,
+    component: OrderSectionComponent,
     data: {
       title: 'Order View'
     }

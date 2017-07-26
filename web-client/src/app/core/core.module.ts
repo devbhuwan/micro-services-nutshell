@@ -7,7 +7,8 @@ import { WorkflowComponent } from './workflow/workflow.component';
     CommonModule
   ],
   declarations: [WorkflowComponent],
-  exports: [WorkflowComponent]
+  exports: [WorkflowComponent],
+  providers: []
 })
 export class CoreModule {
 
