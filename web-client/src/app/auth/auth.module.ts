@@ -12,11 +12,11 @@ export const COMPONENTS = [];
   declarations: COMPONENTS,
   exports: COMPONENTS
 })
-export class CoreModule {
+export class AuthModule {
 
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: RootCoreModule,
+      ngModule: RootAuthModule,
       providers: [],
     };
   }
@@ -25,10 +25,10 @@ export class CoreModule {
 
 @NgModule({
   imports: [
-    CoreModule,
-    StoreModule.forFeature('core', {}),
+    AuthModule,
+    StoreModule.forFeature('auth', {}),
     EffectsModule.forFeature([]),
   ],
 })
-export class RootCoreModule {
+export class RootAuthModule {
 }
