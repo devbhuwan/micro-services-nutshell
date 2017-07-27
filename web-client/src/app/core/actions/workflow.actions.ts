@@ -11,7 +11,6 @@ export class LoadOperation implements Action {
   readonly type = LOAD_OPERATION;
 
   constructor(public payload: Operation[]) {
-    console.log("LoadOperation<#>operations: " + payload.length);
   }
 }
 
@@ -19,7 +18,6 @@ export class LoadOperationCompleteAction implements Action {
   readonly type = LOAD_OPERATION_COMPLETE;
 
   constructor(public payload: Operation[]) {
-    console.log("LoadOperationCompleteAction<#>operations: " + payload.length);
   }
 }
 
@@ -36,7 +34,6 @@ export class ExecuteOperationCompleteAction implements Action {
   readonly type = EXECUTE_OPERATION_COMPLETE;
 
   constructor(public payload: ExecutionResult[]) {
-    console.log("ExecuteOperationCompleteAction<#>exec result: " + payload);
   }
 }
 

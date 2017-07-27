@@ -27,7 +27,6 @@ export class WorkflowEffects {
       }
       return this.workflowService.loadOperations(query)
         .map(operations => {
-          console.log("WorkflowEffects<#>Load Operations>>>" + JSON.stringify(operations));
           return new workflow.LoadOperationCompleteAction(operations)
         })
         .catch(() => of(new workflow.LoadOperationCompleteAction([])));
@@ -43,7 +42,6 @@ export class WorkflowEffects {
       }
       return this.workflowService.executeOperation(query)
         .map(executionResults => {
-          console.log("WorkflowEffects<#>Execute Result>>>" + JSON.stringify(executionResults));
           return new workflow.ExecuteOperationCompleteAction(executionResults)
         })
         .catch(() => of(new workflow.ExecuteOperationCompleteAction([])));

@@ -1,6 +1,7 @@
 import {Operation} from "../models/operation";
 import * as workflow from "../actions/workflow.actions";
-import {createSelector} from "@ngrx/store";
+import {combineReducers, createSelector} from "@ngrx/store";
+import {compose} from "@ngrx/core";
 
 export interface WorkflowState {
   operations: Operation[];
@@ -12,39 +13,41 @@ export const initialState: WorkflowState = {
   selectedOperation: null
 };
 
-export function reducer(state = initialState, action: workflow.Actions): WorkflowState {
+export function workflowReducer(state = initialState, action: workflow.Actions): WorkflowState {
   switch (action.type) {
     case workflow.LOAD_OPERATION: {
-      console.log("WorkflowReducers<#>Load Operation>>>" + JSON.stringify(action.payload));
       return {
         operations: action.payload,
         selectedOperation: state.selectedOperation
       }
     }
     case workflow.LOAD_OPERATION_COMPLETE: {
-      console.log("WorkflowReducers<#>Load Operation Complete>>>" + JSON.stringify(action.payload));
-      return {
-        operations: action.payload,
-        selectedOperation: state.selectedOperation
-      }
+      state.operations = action.payload
+      console.log("" + JSON.stringify(state));
+      return Object.assign({}, state, {logging: true, error: null})
     }
     case workflow.EXECUTE_OPERATION: {
-      console.log("WorkflowReducers<#>Execute Operation>>>>");
       return {
         operations: state.operations,
         selectedOperation: action.payload
       };
     }
     default: {
-      console.log("WorkflowReducers<#>Default>>>>");
       return state;
     }
   }
 }
 
-export const getWorkflowState = (state: WorkflowState) => state;
+export const rootWorkflowReducers = {
+  workflowReducer
+};
 
-export const getOperations = createSelector(getWorkflowState, state => {
-  console.log("WorkflowReducers<#>getOperations()->" + JSON.stringify(state));
-  return state.operations
-});
+export const rootReducer = compose(combineReducers)(rootWorkflowReducers)
+
+export function reducer(state, action) {
+  return rootReducer(state, action);
+}
+
+
+export const getWorkflowState = (state: WorkflowState) => state;
+export const getOperations = createSelector(getWorkflowState, state => state.operations);

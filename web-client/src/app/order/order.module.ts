@@ -4,9 +4,6 @@ import {CommonModule} from '@angular/common';
 import {OrderRoutingModule} from './order-routing.module';
 import {CoreModule} from '../core/core.module';
 import {OrderSectionComponent} from './order-section/order-section.component'
-import {StoreModule} from "@ngrx/store";
-import {EffectsModule} from "@ngrx/effects";
-import { OrderService } from './domain/order.service';
 
 export const COMPONENTS = [
   //ViewComponent
@@ -19,7 +16,7 @@ export const COMPONENTS = [
     CoreModule.forRoot(),
   ],
   declarations: [OrderSectionComponent],
-  providers: [OrderService]
+  providers: []
 })
 export class OrderModule {
 }
