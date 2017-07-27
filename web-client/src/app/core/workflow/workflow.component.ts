@@ -23,7 +23,7 @@ export class WorkflowComponent implements OnInit {
     this.operations$ = this.store.select(workflow.getOperations);
     this.operations$.subscribe(a => {
       console.log("Observer...." + JSON.stringify(a));
-    })
+    });
   }
 
   executeOperation(operation: Operation) {
