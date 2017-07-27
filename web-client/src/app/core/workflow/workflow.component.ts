@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Operation} from "../models/operation";
 import {Store} from "@ngrx/store";
-import * as workflow from "../reducers/workflow.reducers";
 import {WorkflowState} from "../reducers/workflow.reducers";
 import * as workflowActions from "../actions/workflow.actions"
 import {Observable} from "rxjs/Observable";
@@ -19,8 +18,8 @@ export class WorkflowComponent implements OnInit {
   constructor(private store: Store<WorkflowState>) {
     this.operations$ = this.store.select('operations');
     this.operations$.subscribe((ops: Operation[]) => {
+      console.log("Operations :" + JSON.stringify(ops));
       this.operations = ops;
-      console.log("Operations :" + JSON.stringify(ops) )
     });
   }
 

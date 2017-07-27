@@ -38,11 +38,11 @@ export function workflowReducer(state = initialState, action: workflow.Actions):
   }
 }
 
-export const rootWorkflowReducers = {
+export const rootReducers = {
   workflowReducer
 };
 
-export const rootReducer = compose(combineReducers)(rootWorkflowReducers)
+export const rootReducer = compose(combineReducers)(rootReducers);
 
 export function reducer(state, action) {
   return rootReducer(state, action);
