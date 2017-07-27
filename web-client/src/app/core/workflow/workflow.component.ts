@@ -3,7 +3,7 @@ import {Operation} from "../models/operation";
 import {Store} from "@ngrx/store";
 import * as workflow from "../reducers/workflow.reducers";
 import {WorkflowState} from "../reducers/workflow.reducers";
-import {EXECUTE_OPERATION, LOAD_OPERATION, LOAD_OPERATION_COMPLETE} from "../actions/workflow.actions"
+import {EXECUTE_OPERATION, LOAD_OPERATION} from "../actions/workflow.actions"
 import {Observable} from "rxjs/Observable";
 
 @Component({
@@ -14,15 +14,17 @@ import {Observable} from "rxjs/Observable";
 export class WorkflowComponent implements OnInit {
 
   operations$: Observable<Operation[]>;
+  operations: Operation[];
 
   constructor(private store: Store<WorkflowState>) {
+    this.operations$ = this.store.select(workflow.getOperations);
   }
 
   ngOnInit() {
     this.store.dispatch({type: LOAD_OPERATION});
-    this.operations$ = this.store.select(workflow.getOperations);
-    this.operations$.subscribe(a => {
-      console.log("Observer...." + JSON.stringify(a));
+    this.operations$.subscribe(operations => {
+      console.log("WorkflowComponent<#>operations=> " + JSON.stringify(operations));
+      this.operations = operations;
     });
   }
 
