@@ -1,7 +1,6 @@
 import {Operation} from "../models/operation";
 import * as workflow from "../actions/workflow.actions";
-import {combineReducers, createSelector} from "@ngrx/store";
-import {compose} from "@ngrx/core";
+import {createSelector} from "@ngrx/store";
 
 export interface WorkflowState {
   operations: Operation[];
@@ -22,8 +21,7 @@ export function workflowReducer(state = initialState, action: workflow.Actions):
       }
     }
     case workflow.LOAD_OPERATION_COMPLETE: {
-      state.operations = action.payload
-      console.log("" + JSON.stringify(state));
+      state.operations = action.payload;
       return Object.assign({}, state, {logging: true, error: null})
     }
     case workflow.EXECUTE_OPERATION: {
@@ -37,17 +35,6 @@ export function workflowReducer(state = initialState, action: workflow.Actions):
     }
   }
 }
-
-export const rootReducers = {
-  workflowReducer
-};
-
-export const rootReducer = compose(combineReducers)(rootReducers);
-
-export function reducer(state, action) {
-  return rootReducer(state, action);
-}
-
 
 export const getWorkflowState = (state: WorkflowState) => state;
 export const getOperations = createSelector(getWorkflowState, state => state.operations);
