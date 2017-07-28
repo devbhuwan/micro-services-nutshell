@@ -32,7 +32,7 @@ export class WorkflowModule {
 @NgModule({
   imports: [
     CoreModule,
-    StoreModule.forFeature('workflow', reducers),
+    StoreModule.forFeature('appWorkflow', reducers),
     EffectsModule.forFeature(EFFECTS),
   ],
 })

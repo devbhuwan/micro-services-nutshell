@@ -7,7 +7,7 @@ export interface WorkflowState {
 }
 
 export interface State extends fromRoot.State {
-  auth: WorkflowState;
+  workflow: WorkflowState;
 }
 
 export const reducers = {
