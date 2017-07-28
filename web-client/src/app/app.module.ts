@@ -24,6 +24,7 @@ import {CoreModule} from "./core/core.module";
 import {AuthModule} from "./auth/auth.module";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {OrderModule} from "./order/order.module";
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([]),
     CoreModule.forRoot(),
-    AuthModule.forRoot()
+    AuthModule.forRoot(),
+    OrderModule.forRoot()
   ],
   declarations: [
     AppComponent,
