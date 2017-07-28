@@ -9,8 +9,9 @@ import {AuthService} from "./services/auth-service";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthEffects} from "./effects/auth.effects";
 import {reducers} from "./reducers/index";
+import { LoginFormComponent } from './login-form/login-form.component';
 
-export const COMPONENTS = [LoginPageComponent];
+export const COMPONENTS = [LoginPageComponent, LoginFormComponent];
 
 @NgModule({
   imports: [

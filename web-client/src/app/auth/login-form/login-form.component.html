@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Login</h1>
+  <p class="text-muted">Sign In to your account</p>
+  <p *ngIf="errorMessage" class="loginError">
+    {{ errorMessage }}
+  </p>
+  <div class="input-group mb-3">
+    <span class="input-group-addon"><i class="icon-user"></i></span>
+    <input type="text" class="form-control" placeholder="Username"
+           formControlName="username">
+  </div>
+  <div class="input-group mb-4">
+    <span class="input-group-addon"><i class="icon-lock"></i></span>
+    <input type="password" class="form-control" placeholder="Password"
+           formControlName="password">
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <button type="submit" class="btn btn-primary px-4">Login</button>
+    </div>
+    <!--<div class="col-6 text-right">-->
+    <!--<button type="button" class="btn btn-link px-0">Forgot password?</button>-->
+    <!--</div>-->
+  </div>
+</form>

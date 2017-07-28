@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Authenticate} from "../models/user";
+import * as fromAuth from "../reducers/index";
+import {Store} from "@ngrx/store";
+import * as Auth from "../actions/auth";
 
 @Component({
   selector: 'oms-login-page',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  pending$ = this.store.select(fromAuth.getLoginPagePending);
+  error$ = this.store.select(fromAuth.getLoginPageError);
+
+  constructor(private store: Store<fromAuth.State>) {
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit($event: Authenticate) {
+    this.store.dispatch(new Auth.Login($event));
   }
 
 }
