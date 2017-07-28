@@ -6,8 +6,9 @@ import {EffectsModule} from "@ngrx/effects";
 import {reducers} from "./reducers/index";
 import {WorkflowEffects} from "./effects/workflow.effects";
 import {WorkflowService} from "./services/workflow-service";
+import {WorkflowSectionComponent} from "./workflow-section/workflow-section.component";
 
-export const COMPONENTS = [];
+export const COMPONENTS = [WorkflowSectionComponent];
 export const PROVIDERS = [WorkflowService];
 export const EFFECTS = [WorkflowEffects];
 
