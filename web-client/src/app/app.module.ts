@@ -25,6 +25,7 @@ import {AuthModule} from "./auth/auth.module";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {OrderModule} from "./order/order.module";
+import {WorkflowModule} from "./workflow/workflow.module";
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import {OrderModule} from "./order/order.module";
     EffectsModule.forRoot([]),
     CoreModule.forRoot(),
     AuthModule.forRoot(),
+    WorkflowModule.forRoot(),
     OrderModule.forRoot()
   ],
   declarations: [
