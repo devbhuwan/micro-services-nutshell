@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import * as fromWorkflow from '../reducers/index';
+import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'oms-workflow-section',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkflowSectionComponent implements OnInit {
 
-  constructor() { }
+  operations$ = this.store.select(fromWorkflow.getOperations);
+
+  constructor(private store: Store<fromWorkflow.State>) {
+  }
 
   ngOnInit() {
   }
