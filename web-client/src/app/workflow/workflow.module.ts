@@ -3,10 +3,13 @@ import {CommonModule} from '@angular/common';
 import {CoreModule, RootCoreModule} from "../core/core.module";
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
+import {reducers} from "./reducers/index";
+import {WorkflowEffects} from "./effects/workflow.effects";
+import {WorkflowService} from "./services/workflow-service";
 
 export const COMPONENTS = [];
-export const PROVIDERS = [];
-export const EFFECTS = [];
+export const PROVIDERS = [WorkflowService];
+export const EFFECTS = [WorkflowEffects];
 
 @NgModule({
   imports: [
@@ -29,7 +32,7 @@ export class WorkflowModule {
 @NgModule({
   imports: [
     CoreModule,
-    StoreModule.forFeature('workflow', {}),
+    StoreModule.forFeature('workflow', reducers),
     EffectsModule.forFeature(EFFECTS),
   ],
 })
