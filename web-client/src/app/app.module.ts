@@ -20,13 +20,9 @@ import {StoreModule} from "@ngrx/store";
 import {metaReducers, reducers} from "./reducers/index";
 import {environment} from "../environments/environment";
 import {EffectsModule} from "@ngrx/effects";
-import {CoreModule} from "./core/core.module";
 import {AuthModule} from "./auth/auth.module";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {OrderModule} from "./order/order.module";
-import {WorkflowModule} from "./workflow/workflow.module";
-import {CoreUiModule} from "./core-ui/core-ui.module";
 
 @NgModule({
   imports: [
@@ -40,7 +36,6 @@ import {CoreUiModule} from "./core-ui/core-ui.module";
     StoreRouterConnectingModule,
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([]),
-    CoreModule.forRoot(),
     AuthModule.forRoot()
   ],
   declarations: [

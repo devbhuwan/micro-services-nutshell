@@ -6,7 +6,7 @@ import {OrderPageComponent} from './order-page/order-page.component';
 import {OrderRoutingModule} from "./order-routing.module";
 import {OrderFormComponent} from './order-form/order-form.component';
 import {WorkflowModule} from "../workflow/workflow.module";
-import {CoreUiModule} from "../core-ui/core-ui.module";
+import {CoreModule} from "../core/core.module";
 
 export const COMPONENTS = [OrderPageComponent, OrderFormComponent];
 export const PROVIDERS = [];
@@ -16,7 +16,7 @@ export const EFFECTS = [];
   imports: [
     CommonModule,
     OrderRoutingModule,
-    CoreUiModule.forRoot(),
+    CoreModule.forRoot(),
     WorkflowModule.forRoot()
   ],
   declarations: COMPONENTS,

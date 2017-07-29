@@ -1,34 +1,25 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {EffectsModule} from "@ngrx/effects";
+import {UiDateComponent} from './ui-date/ui-date.component';
 import {StoreModule} from "@ngrx/store";
-
-export const COMPONENTS = [];
+import {EffectsModule} from "@ngrx/effects";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    StoreModule.forFeature('core', {}),
+    EffectsModule.forFeature([])
   ],
-  declarations: COMPONENTS,
-  exports: COMPONENTS
+  declarations: [UiDateComponent],
+  exports: [UiDateComponent]
 })
 export class CoreModule {
 
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: RootCoreModule,
+      ngModule: CoreModule,
       providers: [],
     };
   }
 
-}
-
-@NgModule({
-  imports: [
-    CoreModule,
-    StoreModule.forFeature('core', {}),
-    EffectsModule.forFeature([]),
-  ],
-})
-export class RootCoreModule {
 }
