@@ -4,21 +4,25 @@ import {UiDateComponent} from './ui-date/ui-date.component';
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
 
+export const COMPONENTS = [UiDateComponent];
+export const PROVIDERS = [];
+export const EFFECTS = [];
+
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forFeature('core', {}),
-    EffectsModule.forFeature([])
+    EffectsModule.forFeature(EFFECTS)
   ],
-  declarations: [UiDateComponent],
-  exports: [UiDateComponent]
+  declarations: COMPONENTS,
+  exports: COMPONENTS
 })
 export class CoreModule {
 
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: CoreModule,
-      providers: [],
+      providers: PROVIDERS,
     };
   }
 
