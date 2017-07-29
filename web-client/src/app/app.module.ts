@@ -41,9 +41,7 @@ import {CoreUiModule} from "./core-ui/core-ui.module";
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([]),
     CoreModule.forRoot(),
-    AuthModule.forRoot(),
-    WorkflowModule.forRoot(),
-    OrderModule.forRoot()
+    AuthModule.forRoot()
   ],
   declarations: [
     AppComponent,

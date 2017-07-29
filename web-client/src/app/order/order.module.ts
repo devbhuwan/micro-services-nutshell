@@ -17,6 +17,7 @@ export const EFFECTS = [];
     CommonModule,
     OrderRoutingModule,
     CoreUiModule.forRoot(),
+    WorkflowModule.forRoot()
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS

@@ -13,29 +13,20 @@ export const EFFECTS = [WorkflowEffects];
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    StoreModule.forFeature('appWorkflow', reducers),
+    EffectsModule.forFeature([WorkflowEffects])
   ],
-  declarations: COMPONENTS,
-  exports: COMPONENTS
+  declarations: [WorkflowSectionComponent],
+  exports: [WorkflowSectionComponent]
 })
 export class WorkflowModule {
 
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: RootWorkflowModule,
-      providers: PROVIDERS,
+      ngModule: WorkflowModule,
+      providers: [WorkflowService],
     };
   }
-
-}
-
-@NgModule({
-  imports: [
-    WorkflowModule,
-    StoreModule.forFeature('appWorkflow', reducers),
-    EffectsModule.forFeature(EFFECTS),
-  ],
-})
-export class RootWorkflowModule {
 
 }
