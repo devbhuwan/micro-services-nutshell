@@ -1,6 +1,5 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CoreModule, RootCoreModule} from "../core/core.module";
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
 import {reducers} from "./reducers/index";
@@ -32,7 +31,7 @@ export class WorkflowModule {
 
 @NgModule({
   imports: [
-    CoreModule,
+    WorkflowModule,
     StoreModule.forFeature('appWorkflow', reducers),
     EffectsModule.forFeature(EFFECTS),
   ],

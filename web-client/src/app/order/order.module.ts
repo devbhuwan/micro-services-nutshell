@@ -5,6 +5,8 @@ import {StoreModule} from "@ngrx/store";
 import {OrderPageComponent} from './order-page/order-page.component';
 import {OrderRoutingModule} from "./order-routing.module";
 import {OrderFormComponent} from './order-form/order-form.component';
+import {WorkflowModule} from "../workflow/workflow.module";
+import {CoreUiModule} from "../core-ui/core-ui.module";
 
 export const COMPONENTS = [OrderPageComponent, OrderFormComponent];
 export const PROVIDERS = [];
@@ -14,6 +16,7 @@ export const EFFECTS = [];
   imports: [
     CommonModule,
     OrderRoutingModule,
+    CoreUiModule.forRoot(),
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS

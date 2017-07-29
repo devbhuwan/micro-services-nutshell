@@ -26,6 +26,7 @@ import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {OrderModule} from "./order/order.module";
 import {WorkflowModule} from "./workflow/workflow.module";
+import {CoreUiModule} from "./core-ui/core-ui.module";
 
 @NgModule({
   imports: [
