@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import * as fromWorkflow from '../reducers/index';
 import {Store} from "@ngrx/store";
+import {WorkflowService} from "../services/workflow-service";
+import {Observable} from "rxjs/Observable";
+import {Operation} from "../models/workflow";
 
 @Component({
   selector: 'oms-workflow-section',
@@ -9,12 +12,17 @@ import {Store} from "@ngrx/store";
 })
 export class WorkflowSectionComponent implements OnInit {
 
-  operations$ = this.store.select(fromWorkflow.getOperations);
+  operations$: Observable<Operation[]>;
 
-  constructor(private store: Store<fromWorkflow.State>) {
+  constructor(private store: Store<fromWorkflow.State>, private workflowService: WorkflowService) {
   }
 
   ngOnInit() {
+    this.operations$ = this.workflowService.loadOperations();
+  }
+
+  clickOperation(operation: Operation) {
+    console.log("Click Operation : " + JSON.stringify(operation));
   }
 
 }

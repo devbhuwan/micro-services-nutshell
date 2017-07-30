@@ -14,7 +14,7 @@ export const EFFECTS = [WorkflowEffects];
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.forFeature('appWorkflow', reducers),
+    StoreModule.forFeature('workflow', reducers),
     EffectsModule.forFeature(EFFECTS)
   ],
   declarations: COMPONENTS,

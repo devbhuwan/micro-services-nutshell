@@ -1,2 +1,4 @@
-<button type="button" class="btn btn-primary">Primary</button>
-asdasdad
+<button *ngFor="let operation of operations$ | async"
+        type="button" class="btn btn-primary" (click)="clickOperation(operation)">
+  {{operation.label}}
+</button>
