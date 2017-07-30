@@ -4,6 +4,7 @@ import {Store} from "@ngrx/store";
 import {WorkflowService} from "../services/workflow-service";
 import {Observable} from "rxjs/Observable";
 import {Operation} from "../models/workflow";
+import * as WorkflowActions from '../actions/workflow';
 
 @Component({
   selector: 'oms-workflow-section',
@@ -14,6 +15,7 @@ export class WorkflowSectionComponent implements OnInit {
 
   operations$: Observable<Operation[]>;
 
+
   constructor(private store: Store<fromWorkflow.State>, private workflowService: WorkflowService) {
   }
 
@@ -21,8 +23,9 @@ export class WorkflowSectionComponent implements OnInit {
     this.operations$ = this.workflowService.loadOperations();
   }
 
-  clickOperation(operation: Operation) {
-    console.log("Click Operation : " + JSON.stringify(operation));
+  clickOperation($event: Operation) {
+    console.log("Click Operation : " + JSON.stringify($event));
+    this.store.dispatch(new WorkflowActions.ExecuteOperation($event));
   }
 
 }

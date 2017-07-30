@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {of} from 'rxjs/observable/of';
 import {_throw} from 'rxjs/observable/throw';
 import {Operation} from '../models/workflow';
 import {Observable} from "rxjs/Observable";
@@ -14,11 +13,13 @@ export class WorkflowService {
   }
 
   executeOperation({taskKey}: Operation) {
-    if (taskKey !== null) {
-      return _throw('Invalid username or password');
+    if (taskKey == null) {
+      return _throw('Task key is null');
     }
-
-    return of({name: 'User'});
+    let requestBody = {};
+    console.log("REQUEST-BODY=>" + JSON.stringify(requestBody));
+    this.http.post(`${this.API_PATH}/workflow/execute`, requestBody)
+      .map(res => this.extractData(res) || []);
   }
 
   loadOperations(): Observable<Operation[]> {
