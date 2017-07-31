@@ -9,6 +9,7 @@ import {WorkflowModule} from "../workflow/workflow.module";
 import {CoreModule} from "../core/core.module";
 import {OrderListComponent} from './order-list/order-list.component';
 import {OrderService} from "./shared/services/order.service";
+import {HotTableModule} from "ng2-handsontable";
 
 export const COMPONENTS = [OrderPageComponent, OrderFormComponent, OrderListComponent];
 export const PROVIDERS = [OrderService];
@@ -17,6 +18,7 @@ export const EFFECTS = [];
 @NgModule({
   imports: [
     CommonModule,
+    HotTableModule,
     OrderRoutingModule,
     CoreModule.forRoot(),
     WorkflowModule.forRoot()

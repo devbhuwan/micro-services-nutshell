@@ -23,6 +23,7 @@ import {EffectsModule} from "@ngrx/effects";
 import {AuthModule} from "./auth/auth.module";
 import {StoreRouterConnectingModule} from "@ngrx/router-store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {HotTableModule} from "ng2-handsontable";
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     ChartsModule,
     StoreModule.forRoot(reducers, {metaReducers}),
     StoreRouterConnectingModule,
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    HotTableModule,
+    //!environment.production ? StoreDevtoolsModule.instrument({}) : [],
     EffectsModule.forRoot([]),
     AuthModule.forRoot()
   ],
