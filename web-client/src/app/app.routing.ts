@@ -7,8 +7,10 @@ import {AuthGuard} from "./auth/services/auth-guard";
 export const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   {
-    path: '', component: FullLayoutComponent, data: {title: 'OMS'}, canActivate: [AuthGuard],
-    children: [
+    path: '', component: FullLayoutComponent, data: {title: 'OMS'}
+    // , canActivate: [AuthGuard],
+
+    ,children: [
       {
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
