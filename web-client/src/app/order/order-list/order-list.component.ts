@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {Order} from "../shared/models/order";
 import {getFinanceData} from "./data";
+import {OrderService} from "../shared/services/order.service";
 
 @Component({
   selector: 'oms-order-list',
@@ -19,13 +20,14 @@ export class OrderListComponent implements OnInit {
 
   constructor() {
     this.data = getFinanceData();
-    this.colHeaders = ['ORDER ID', 'ORDER DATE', 'CUSTOMER NAME', 'CUSTOMER DESCRIPTION', 'ORDER STATE'];
+    this.colHeaders = ['ORDER ID', 'ORDER DATE', 'CUSTOMER NAME', 'CUSTOMER DESCRIPTION', 'ORDER STATE', 'ACTIONS'];
     this.columns = [
-      {type: 'numeric', format: '$0,0.00'},
+      {type: 'numeric'},
       {type: 'date', dateFormat: 'DD/MM/YYYY', correctFormat: true},
-      {type: 'numeric', format: '0.00%'},
-      {type: 'numeric', format: '0.00%'},
-      {type: 'numeric', format: '0.00'}
+      {type: 'text'},
+      {type: 'text'},
+      {type: 'text'},
+      {type: 'text'}
     ];
     this.options = {
       height: 396,
