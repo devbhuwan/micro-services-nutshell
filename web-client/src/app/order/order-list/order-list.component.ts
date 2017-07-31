@@ -11,17 +11,15 @@ import {getFinanceData} from "./data";
 export class OrderListComponent implements OnInit {
 
   orders$: Observable<Order[]>;
-
+  eventHandler: EventEmitter<{}>;
   private data: any[];
   private colHeaders: string[];
   private columns: any[];
   private options: any;
 
-  eventHandler: EventEmitter<{}>;
-
   constructor() {
     this.data = getFinanceData();
-    this.colHeaders = ['Price', 'Date', '1D Chg', 'YTD Chg', 'Vol BTC'];
+    this.colHeaders = ['ORDER ID', 'ORDER DATE', 'CUSTOMER NAME', 'CUSTOMER DESCRIPTION', 'ORDER STATE'];
     this.columns = [
       {type: 'numeric', format: '$0,0.00'},
       {type: 'date', dateFormat: 'DD/MM/YYYY', correctFormat: true},
