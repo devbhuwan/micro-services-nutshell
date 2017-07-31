@@ -7,9 +7,11 @@ import {OrderRoutingModule} from "./order-routing.module";
 import {OrderFormComponent} from './order-form/order-form.component';
 import {WorkflowModule} from "../workflow/workflow.module";
 import {CoreModule} from "../core/core.module";
+import {OrderListComponent} from './order-list/order-list.component';
+import {OrderService} from "./shared/services/order.service";
 
-export const COMPONENTS = [OrderPageComponent, OrderFormComponent];
-export const PROVIDERS = [];
+export const COMPONENTS = [OrderPageComponent, OrderFormComponent, OrderListComponent];
+export const PROVIDERS = [OrderService];
 export const EFFECTS = [];
 
 @NgModule({

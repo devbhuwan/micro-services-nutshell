@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/exhaustMap';
+import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import {Injectable} from '@angular/core';
@@ -17,10 +17,9 @@ export class WorkflowEffects {
   @Effect()
   executeOperation$ = this.actions$
     .ofType(Workflow.EXECUTE_OPERATION)
-    .map((action: Workflow.ExecuteOperation) => action.payload)
-    .exhaustMap(operation =>
+    .switchMap((action: Workflow.ExecuteOperation) =>
       this.workflowService
-        .executeOperation(operation)
+        .executeOperation(action.payload)
         .map(operationExecutionResult => new Workflow.ExecuteOperationSuccess({operationExecutionResult}))
         .catch(error => of(new Workflow.ExecuteOperationFailure(error)))
     );

@@ -2,8 +2,8 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
     compile project(":order-ignite-impl")
-    compile "$project.group:oms-micro-service-starter:$project.version"
-    compile "$project.group:oms-camunda-workflow-starter:$project.version"
+    compile project(":micro-service-starter")
+    compile project(":camunda-workflow-starter")
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }

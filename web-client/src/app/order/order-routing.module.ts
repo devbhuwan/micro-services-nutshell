@@ -7,15 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: OrderPageComponent,
-    data: {
-      title: 'Order View'
-    },
-    children: [
-      {
-        path: 'newOrder',
-        component: OrderFormComponent,
-      }
-    ]
+    data: {title: 'Order View'}
+  },
+  {
+    path: 'form',
+    component: OrderFormComponent,
+    data: {title: 'Order Form'}
   }
 ];
 

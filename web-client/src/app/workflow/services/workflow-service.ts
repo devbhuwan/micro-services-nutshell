@@ -12,19 +12,20 @@ export class WorkflowService {
   constructor(private http: Http) {
   }
 
-  executeOperation({taskKey}: Operation) {
-    if (taskKey == null) {
+  executeOperation(operation: Operation) {
+    console.log("ExecuteOperation=>" + JSON.stringify(operation));
+    if (operation == null) {
       return _throw('Task key is null');
     }
     let requestBody = {};
     console.log("REQUEST-BODY=>" + JSON.stringify(requestBody));
-    this.http.post(`${this.API_PATH}/workflow/execute`, requestBody)
+    this.http.post(`${this.API_PATH}/workflow/execute`, JSON.stringify(requestBody))
       .map(res => this.extractData(res) || []);
   }
 
   loadOperations(): Observable<Operation[]> {
     return this.http
-      .get(`${this.API_PATH}/workflow/operations`)
+      .post(`${this.API_PATH}/workflow/operations`, JSON.stringify({"hello": "Yes"}))
       .map(res => this.extractData(res) || []);
   }
 
