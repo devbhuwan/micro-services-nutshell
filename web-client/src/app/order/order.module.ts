@@ -11,10 +11,11 @@ import {OrderListComponent} from './order-list/order-list.component';
 import {OrderService} from "./shared/services/order.service";
 import {HotTableModule} from "ng2-handsontable";
 import {ReactiveFormsModule} from "@angular/forms";
+import {OrderEffects} from "./shared/effects/order";
 
 export const COMPONENTS = [OrderPageComponent, OrderFormComponent, OrderListComponent];
 export const PROVIDERS = [OrderService];
-export const EFFECTS = [];
+export const EFFECTS = [OrderEffects];
 
 @NgModule({
   imports: [
