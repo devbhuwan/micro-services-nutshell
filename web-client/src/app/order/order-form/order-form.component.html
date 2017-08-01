@@ -1,8 +1,11 @@
-<form formGroup="orderForm">
+<form [formGroup]="form">
   <div class="form-group row">
     <label class="col-sm-2 col-form-label">Description</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control form-control-success" formControlName="description">
+      <input type="text" class="form-control" formControlName="description">
     </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary" (click)="clickSubmit()">Submit</button>
   </div>
 </form>

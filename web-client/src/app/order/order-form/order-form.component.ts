@@ -8,7 +8,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class OrderFormComponent implements OnInit {
 
-  orderForm: FormGroup = new FormGroup({
+  form: FormGroup = new FormGroup({
     description: new FormControl(''),
   });
 
@@ -16,6 +16,10 @@ export class OrderFormComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  clickSubmit() {
+    console.log("clickSubmit() => " + JSON.stringify(this.form.value));
   }
 
 }
