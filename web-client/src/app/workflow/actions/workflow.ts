@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {Operation, OperationExecutionResult} from '../models/workflow';
+import {ExecuteOperationParameter, Operation, OperationExecutionResult} from '../models/workflow';
 
 export const EXECUTE_OPERATION = '[Operation] Execute';
 export const EXECUTE_OPERATION_SUCCESS = '[Operation] Execute Success';
@@ -8,7 +8,7 @@ export const EXECUTE_OPERATION_FAILURE = '[Operation] Execute Failure';
 export class ExecuteOperation implements Action {
   readonly type = EXECUTE_OPERATION;
 
-  constructor(public payload: Operation) {
+  constructor(public payload: ExecuteOperationParameter) {
   }
 }
 

@@ -4,7 +4,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 import {Injectable} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Actions, Effect} from '@ngrx/effects';
 import {of} from 'rxjs/observable/of';
 
@@ -24,14 +24,10 @@ export class WorkflowEffects {
         .catch(error => of(new Workflow.ExecuteOperationFailure(error)))
     );
 
-  @Effect({dispatch: false})
-  executeOperationSuccess$ = this.actions$
-    .ofType(Workflow.EXECUTE_OPERATION_SUCCESS)
-    .do(() => this.router.navigate(['/']));
-
   constructor(private actions$: Actions,
               private workflowService: WorkflowService,
-              private router: Router) {
+              private router: Router,
+              private route: ActivatedRoute) {
   }
 
 }

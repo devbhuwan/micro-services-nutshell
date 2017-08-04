@@ -25,3 +25,5 @@ export const getSelectedOperation = createSelector(
 );
 
 export const getOperations = createSelector(selectWorkflowStatusState, fromWorkflow.getOperations);
+
+export const getExecuteOperationParameter = createSelector(selectWorkflowStatusState, fromWorkflow.getExecuteOperationParameter);

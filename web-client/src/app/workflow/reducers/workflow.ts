@@ -21,3 +21,11 @@ export function reducer(state = initialState, action: workflow.Actions): State {
 
 export const getOperations = (state: State) => state.operations;
 export const getSelectedOperation = (state: State) => state.selectedOperation;
+export const getExecuteOperationParameter = (state: State) => {
+  return {
+    taskKey: state.selectedOperation.taskKey,
+    domainDto: {},
+    processInstanceId: null,
+    domainKey: null
+  }
+};

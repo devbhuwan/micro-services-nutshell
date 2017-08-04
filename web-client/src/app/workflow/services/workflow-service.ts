@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {_throw} from 'rxjs/observable/throw';
-import {Operation} from '../models/workflow';
+import {ExecuteOperationParameter, Operation} from '../models/workflow';
 import {Observable} from "rxjs/Observable";
 import {Http} from "@angular/http";
 
@@ -12,9 +12,9 @@ export class WorkflowService {
   constructor(private http: Http) {
   }
 
-  executeOperation(operation: Operation) {
-    console.log("ExecuteOperation=>" + JSON.stringify(operation));
-    if (operation == null) {
+  executeOperation(parameter: ExecuteOperationParameter) {
+    console.log("ExecuteOperation=>" + JSON.stringify(parameter));
+    if (parameter == null) {
       return _throw('Task key is null');
     }
     let requestBody = {};
