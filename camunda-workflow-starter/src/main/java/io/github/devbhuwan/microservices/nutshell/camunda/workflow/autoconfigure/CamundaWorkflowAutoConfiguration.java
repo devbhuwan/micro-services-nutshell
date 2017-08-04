@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
 @EnableConfigurationProperties(CamundaWorkflowProperties.class)
 @Slf4j
 public class CamundaWorkflowAutoConfiguration {
-
+    public static String BASE_PACKAGE = "io.github.devbhuwan.microservices.nutshell.camunda.workflow";
     @Autowired
     private CamundaWorkflowProperties camundaWorkflowProperties;
 

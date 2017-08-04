@@ -14,6 +14,8 @@ import javax.annotation.PostConstruct;
 @Slf4j
 public class MicroServiceAutoConfiguration extends WebMvcConfigurerAdapter {
 
+    public static String BASE_PACKAGE = "io.github.devbhuwan.microservices";
+
     @Autowired
     private MicroServiceProperties microServiceProperties;
 
