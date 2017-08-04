@@ -39,7 +39,8 @@ public class MicroServiceSecurityAutoConfiguration extends WebSecurityConfigurer
     protected void configure(HttpSecurity http) throws Exception {
         http.addFilterBefore(new BeforeWorkflowApiServiceRequestFilter(), BasicAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/**");
+                .anyRequest()
+                .authenticated();
 
     }
 
