@@ -22,12 +22,11 @@ import javax.annotation.PostConstruct;
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class MicroServiceSecurityAutoConfiguration extends WebSecurityConfigurerAdapter {
 
-    public static String BASE_PACKAGE = "io.github.devbhuwan.microservices.security";
+    public static final String BASE_PACKAGE = "io.github.devbhuwan.microservices.security";
 
     @Autowired
     private MicroServiceSecurityProperties microServiceSecurityProperties;
 
-    @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     private UserAuthenticationProvider userAuthenticationProvider;
 

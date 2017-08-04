@@ -1,11 +1,12 @@
 dependencies {
+    compile project(":workflow-model")
+    compile project(":micro-service-security-starter")
     compile("org.springframework.boot:spring-boot-autoconfigure")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.camunda.bpm.extension.springboot:camunda-bpm-spring-boot-starter:$camundaSpringBootStarter")
     compileOnly("org.springframework.boot:spring-boot-configuration-processor")
     compile("$appLibs.gson")
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    compile project(":workflow-model")
 }
 
 compileJava.dependsOn(processResources)

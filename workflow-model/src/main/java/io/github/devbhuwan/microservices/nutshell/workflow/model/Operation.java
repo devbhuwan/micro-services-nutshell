@@ -1,11 +1,12 @@
 package io.github.devbhuwan.microservices.nutshell.workflow.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import io.github.devbhuwan.microservices.nutshell.workflow.ImmutableOperation;
 import org.immutables.value.Value;
 
+import static io.github.devbhuwan.microservices.nutshell.workflow.model.ImmutableOperation.Builder;
+
 @Value.Immutable
-@JsonDeserialize(builder = ImmutableOperation.Builder.class)
+@JsonDeserialize(builder = Builder.class)
 public interface Operation {
 
     String taskKey();

@@ -12,6 +12,7 @@ appLibs += [
         gson                  : "com.google.code.gson:gson",
         jackson               : "com.fasterxml.jackson.core:jackson-databind",
 
+        h2                    : "com.h2database:h2:$h2Version",
         logbackCore           : "ch.qos.logback:logback-core:$logbackVersion",
         logbackClassic        : "ch.qos.logback:logback-classic:$logbackVersion",
         logbackAccess         : "ch.qos.logback:logback-access:$logbackVersion",

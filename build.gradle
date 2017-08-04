@@ -63,6 +63,7 @@ subprojects {
         compile "$appLibs.immutableValue"
         compile "$appLibs.jackson"
         compile "$appLibs.slf4j"
+        compile "$appLibs.h2"
 
         apt "$appLibs.immutableValue"
         apt "$appLibs.lombok"
