@@ -1,4 +1,4 @@
-package io.github.devbhuwan.microservices.nutshell.camunda.workflow.model;
+package io.github.devbhuwan.microservices.nutshell.workflow.model;
 
 public class WorkflowConstants {
 

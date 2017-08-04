@@ -5,6 +5,7 @@ dependencies {
     compileOnly("org.springframework.boot:spring-boot-configuration-processor")
     compile("$appLibs.gson")
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile project(":workflow-model")
 }
 
 compileJava.dependsOn(processResources)

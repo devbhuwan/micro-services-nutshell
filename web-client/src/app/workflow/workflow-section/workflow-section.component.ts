@@ -3,9 +3,8 @@ import * as fromWorkflow from '../reducers/index';
 import {Store} from "@ngrx/store";
 import {WorkflowService} from "../services/workflow-service";
 import {Observable} from "rxjs/Observable";
-import {ExecuteOperationParameter, Operation} from "../models/workflow";
+import {Operation} from "../models/workflow";
 import * as WorkflowActions from '../actions/workflow';
-import * as fromWorkflow from '../reducers/index';
 
 @Component({
   selector: 'oms-workflow-section',
@@ -21,7 +20,6 @@ export class WorkflowSectionComponent implements OnInit {
   executeOperationParameter$ = this.store.select(fromWorkflow.getExecuteOperationParameter);
 
 
-
   constructor(private store: Store<fromWorkflow.State>, private workflowService: WorkflowService) {
   }
 
@@ -33,7 +31,9 @@ export class WorkflowSectionComponent implements OnInit {
     console.log("Click Operation : " + JSON.stringify($event));
     this.store.dispatch(new WorkflowActions.ExecuteOperation({
       taskKey: $event.taskKey,
-      domainKey:
+      domainKey: null,
+      domainDto: {},
+      processInstanceId: null
     }));
   }
 

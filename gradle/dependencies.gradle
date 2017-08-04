@@ -9,7 +9,8 @@ appLibs += [
         slf4j                 : "org.slf4j:slf4j-api",
         junit                 : "junit:junit",
         assertj               : "org.assertj:assertj-core",
-        gson : "com.google.code.gson:gson",
+        gson                  : "com.google.code.gson:gson",
+        jackson               : "com.fasterxml.jackson.core:jackson-databind",
 
         logbackCore           : "ch.qos.logback:logback-core:$logbackVersion",
         logbackClassic        : "ch.qos.logback:logback-classic:$logbackVersion",

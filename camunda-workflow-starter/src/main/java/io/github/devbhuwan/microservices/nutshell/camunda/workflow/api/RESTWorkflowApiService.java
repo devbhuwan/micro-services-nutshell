@@ -3,8 +3,8 @@ package io.github.devbhuwan.microservices.nutshell.camunda.workflow.api;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import io.github.devbhuwan.microservices.nutshell.camunda.workflow.model.ImmutableOperation;
-import io.github.devbhuwan.microservices.nutshell.camunda.workflow.model.Operation;
+import io.github.devbhuwan.microservices.nutshell.workflow.model.ImmutableOperation;
+import io.github.devbhuwan.microservices.nutshell.workflow.model.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.TaskService;
@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static io.github.devbhuwan.microservices.nutshell.camunda.workflow.model.WorkflowConstants.PROCESS_INSTANCE_ID;
+import static io.github.devbhuwan.microservices.nutshell.workflow.model.WorkflowConstants.PROCESS_INSTANCE_ID;
 
 @RestController
 @RequestMapping("/workflow")

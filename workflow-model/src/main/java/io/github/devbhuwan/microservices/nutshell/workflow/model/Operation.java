@@ -1,6 +1,7 @@
-package io.github.devbhuwan.microservices.nutshell.camunda.workflow.model;
+package io.github.devbhuwan.microservices.nutshell.workflow.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import io.github.devbhuwan.microservices.nutshell.workflow.ImmutableOperation;
 import org.immutables.value.Value;
 
 @Value.Immutable

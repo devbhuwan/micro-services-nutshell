@@ -13,13 +13,11 @@ export class WorkflowService {
   }
 
   executeOperation(parameter: ExecuteOperationParameter) {
-    console.log("ExecuteOperation=>" + JSON.stringify(parameter));
     if (parameter == null) {
       return _throw('Task key is null');
     }
-    let requestBody = {};
-    console.log("REQUEST-BODY=>" + JSON.stringify(requestBody));
-    this.http.post(`${this.API_PATH}/workflow/execute`, JSON.stringify(requestBody))
+    console.log("REQUEST-BODY=>" + JSON.stringify(parameter));
+    this.http.post(`${this.API_PATH}/workflow/execute`, JSON.stringify(parameter))
       .map(res => this.extractData(res) || []);
   }
 

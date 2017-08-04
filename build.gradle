@@ -61,6 +61,7 @@ subprojects {
         compile "$appLibs.groovyAll"
         compile "$appLibs.guava"
         compile "$appLibs.immutableValue"
+        compile "$appLibs.jackson"
         compile "$appLibs.slf4j"
 
         apt "$appLibs.immutableValue"
