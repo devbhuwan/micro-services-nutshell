@@ -1,4 +1,4 @@
-package io.github.devbhuwan.microservices.nutshell.workflow.model;
+package io.github.devbhuwan.microservices.identity.model;
 
 import org.immutables.value.Value;
 

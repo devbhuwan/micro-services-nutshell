@@ -9,7 +9,9 @@ include 'configuration'
 include 'service-hystrix-dashboard'
 include 'service-auth-server'
 
+include 'identity-model'
 include 'workflow-model'
+include 'micro-service-security-starter'
 include 'camunda-workflow-starter'
 include 'logback-logstash-starter'
 
