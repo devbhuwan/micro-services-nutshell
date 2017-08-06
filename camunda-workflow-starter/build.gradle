@@ -4,6 +4,8 @@ dependencies {
     compile("org.springframework.boot:spring-boot-autoconfigure")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.camunda.bpm.extension.springboot:camunda-bpm-spring-boot-starter:$camundaSpringBootStarter")
+//    compile("org.camunda.bpm.extension.springboot:camunda-bpm-spring-boot-starter-rest:$camundaSpringBootStarter")
+    testCompile("org.camunda.bpm.extension.springboot:camunda-bpm-spring-boot-starter-test:$camundaSpringBootStarter")
     compileOnly("org.springframework.boot:spring-boot-configuration-processor")
     compile("$appLibs.gson")
     testCompile("org.springframework.boot:spring-boot-starter-test")
