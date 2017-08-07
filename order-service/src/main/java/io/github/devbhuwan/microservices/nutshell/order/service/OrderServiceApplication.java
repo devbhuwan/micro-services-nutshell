@@ -1,5 +1,7 @@
 package io.github.devbhuwan.microservices.nutshell.order.service;
 
+import io.github.devbhuwan.microservices.autoconfigure.MicroServiceAutoConfiguration;
+import io.github.devbhuwan.microservices.security.autoconfigure.MicroServiceSecurityAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +12,11 @@ import org.springframework.context.annotation.ImportResource;
  * @date 2017/07/10
  */
 @SpringBootApplication
-@ComponentScan(basePackages = "io.github.devbhuwan")
+@ComponentScan(basePackageClasses = {
+        OrderServiceApplication.class,
+        MicroServiceAutoConfiguration.class,
+        MicroServiceSecurityAutoConfiguration.class
+})
 @ImportResource(locations = {"classpath:config/service/*.xml"})
 public class OrderServiceApplication {
 
