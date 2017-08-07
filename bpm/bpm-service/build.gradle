@@ -1,0 +1,18 @@
+dependencies {
+    compile project(":bpm:bpm-model")
+    compile project(":micro-service-starter")
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+    compile("org.springframework.boot:spring-boot-starter-web")
+
+    compile("org.springframework.cloud:spring-cloud-stream")
+    compile("org.springframework.cloud:spring-cloud-stream-binder-rabbit")
+
+    compile("org.activiti:activiti-spring-boot-starter-rest-api:$activitiSpringBootStarter")
+    compileOnly("org.springframework.boot:spring-boot-configuration-processor")
+    compile("$appLibs.gson")
+
+    testCompile("org.springframework.cloud:spring-cloud-stream-binder-rabbit-test-support")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+compileJava.dependsOn(processResources)
