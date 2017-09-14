@@ -34,7 +34,6 @@ public class MicroServiceBpmAutoConfiguration {
         log.debug("#usersAndGroupsInitializer()....");
         return () -> {
             SafeValueUtil.safe(microServiceBpmProperties.getSecurityGroupProperties()).forEach(role -> {
-
                 log.debug(role.toString());
                 Group group = identityService.newGroup("");
                 group.setName("users");

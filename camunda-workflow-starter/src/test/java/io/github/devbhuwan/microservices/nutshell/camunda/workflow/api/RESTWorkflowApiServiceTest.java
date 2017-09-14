@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,18 +28,18 @@ public class RESTWorkflowApiServiceTest extends AbstractTest {
         Thread.sleep(5000);
         final ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(WF_REQUEST_APPROVAL);
         assertNotNull(processInstance);
-
-        //-> A
-        List<Task> ATasks = getTasks(processInstance);
-        Map<String, Object> ATaskVariables = new HashMap<>();
-        ATaskVariables.put("approved", "false");
-        execute(ATasks.get(0), ATaskVariables);
-        //-> B
-        List<Task> BTasks = getTasks(processInstance);
-        Map<String, Object> BTaskVariables = new HashMap<>();
-        BTaskVariables.put("approved", "true");
-        execute(ATasks.get(0), BTaskVariables);
-        List<Task> FinalTasks = getTasks(processInstance);
+//
+//        //-> A
+//        List<Task> ATasks = getTasks(processInstance);
+//        Map<String, Object> ATaskVariables = new HashMap<>();
+//        ATaskVariables.put("approved", "false");
+//        execute(ATasks.get(0), ATaskVariables);
+//        //-> B
+//        List<Task> BTasks = getTasks(processInstance);
+//        Map<String, Object> BTaskVariables = new HashMap<>();
+//        BTaskVariables.put("approved", "true");
+//        execute(ATasks.get(0), BTaskVariables);
+//        List<Task> FinalTasks = getTasks(processInstance);
     }
 
     private List<Task> getTasks(ProcessInstance processInstance) {

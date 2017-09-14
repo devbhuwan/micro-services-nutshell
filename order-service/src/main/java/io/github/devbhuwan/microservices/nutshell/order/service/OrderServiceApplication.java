@@ -12,11 +12,7 @@ import org.springframework.context.annotation.ImportResource;
  * @date 2017/07/10
  */
 @SpringBootApplication
-@ComponentScan(basePackageClasses = {
-        OrderServiceApplication.class,
-        MicroServiceAutoConfiguration.class,
-        MicroServiceSecurityAutoConfiguration.class
-})
+@ComponentScan(basePackages = "io.github.devbhuwan")
 @ImportResource(locations = {"classpath:config/service/*.xml"})
 public class OrderServiceApplication {
 
